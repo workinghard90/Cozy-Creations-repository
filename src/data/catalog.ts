@@ -169,7 +169,7 @@ export const products: CatalogProduct[] = [
     status: "coming-soon",
     specs: ["Ages 3–8", "8.5 × 11 in paperback", "84 pages", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
     featured: true,
-    // coverAsset: set ONLY once the owner's official cover file arrives.
+    coverAsset: "/covers/pips-cloud-magic-coloring-book.png",
     // amazonUrl: set ONLY once a verified Amazon listing URL exists — never before.
   },
   {
@@ -195,7 +195,8 @@ export const products: CatalogProduct[] = [
     // A keepsake record of service, repairs, maintenance costs, and completed
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
-    // coverAsset / amazonUrl: reserved until real, verified assets exist.
+    coverAsset: "/covers/vehicle-maintenance-logbook.png",
+    // amazonUrl: reserved until a verified listing exists.
   },
   // ── Future titles get added above this line ──────────────────────────────
 ];
