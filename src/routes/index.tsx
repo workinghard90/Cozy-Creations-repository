@@ -23,6 +23,7 @@ import { pageMeta } from "~/lib/seo";
 /** The featured title whose official cover fronts the homepage block, if supplied. */
 const FEATURED_TITLE = products.find((product) => product.featured);
 const FEATURED_COVER = assetSrc(FEATURED_TITLE?.coverAsset);
+const LOGBOOK = products.find((product) => product.id === "vehicle-maintenance-logbook");
 
 export const Route = createFileRoute("/")({
   head: () =>
@@ -127,6 +128,43 @@ function Home() {
           />
         </div>
       </Container>
+
+      {/* Practical-book spotlight: an honest preview, not a premature sales pitch. */}
+      {LOGBOOK ? (
+        <Container className="pb-12 sm:pb-16">
+          <div className="grid items-center gap-7 rounded-3xl border border-gold/40 bg-white p-5 shadow-soft sm:p-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:p-10">
+            <ArtworkFrame
+              src={assetSrc(LOGBOOK.coverAsset)}
+              alt={`Cover of ${LOGBOOK.title}`}
+              ratio="portrait"
+              icon="book"
+              tone="brand"
+              label="Official cover coming soon"
+              title={LOGBOOK.title}
+              className="mx-auto w-full max-w-[13rem] sm:max-w-[16rem]"
+            />
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-ink-soft">For the practical side of life</p>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">{LOGBOOK.title}</h2>
+                <StatusBadge tone="comingSoon" />
+              </div>
+              <p className="mt-4 leading-relaxed text-ink/85">
+                Keep service quotes, completed repairs, parts, and costs together. Explore the actual interior previews before publication.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-ink-soft">120 pages · 40 two-page repair records · 25 notes pages</p>
+              <Link
+                to="/books/$collection/$product"
+                params={{ collection: "logbooks-journals", product: "vehicle-maintenance-logbook" }}
+                className={button("primary", "md", "mt-6 w-full sm:w-auto")}
+              >
+                Preview the Logbook
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </Container>
+      ) : null}
 
       {/* Collections grid — rendered from src/data/catalog.ts so it grows automatically */}
       <Container id="collections" className="scroll-mt-24 pb-14 sm:pb-16">
