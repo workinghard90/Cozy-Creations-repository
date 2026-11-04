@@ -97,7 +97,7 @@ function Home() {
               of friendship, kindness, and gentle magic.
             </p>
             <p className="mt-3 leading-relaxed text-ink/85">
-              His very first coloring book is nearly ready to drift your way.
+              Explore the official cover and preview coloring pages while we prepare for publication.
             </p>
             <Link
               to="/pips-cloud-magic"
