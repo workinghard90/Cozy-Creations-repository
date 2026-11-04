@@ -87,7 +87,7 @@ export interface CatalogProduct {
    * it out) and the site shows the honest "Official cover coming soon" frame.
    */
   coverAsset?: string;
-  /** Optional verified Amazon listing URL — never a guessed or invented link. */
+  /** Optional verified Amazon listing URL — never a guessed or invented link. Purchase CTA also requires status === 'available'. */
   amazonUrl?: string;
   /** Verified contents for the product detail page. */
   inside?: string[];
