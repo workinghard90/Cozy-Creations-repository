@@ -27,6 +27,19 @@ export function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
+  // A viewport change can hide the mobile toggle while its panel is open.
+  // Reset the disclosure when switching to desktop navigation so keyboard
+  // focus and menu state cannot become stranded across responsive layouts.
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const onBreakpointChange = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    desktop.addEventListener("change", onBreakpointChange);
+    onBreakpointChange();
+    return () => desktop.removeEventListener("change", onBreakpointChange);
+  }, []);
+
   // While the mobile menu is open: move focus into it, close on Escape (focus
   // returns to the toggle), and close on a click/tap outside.
   useEffect(() => {
