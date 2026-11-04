@@ -150,6 +150,31 @@ function ProductDetailPage() {
             className="mx-auto w-full max-w-[15rem] sm:max-w-xs lg:max-w-none"
           />
         </article>
+        {product.inside?.length ? (
+          <section aria-labelledby="inside-heading" className="mt-10 rounded-3xl border border-ink/10 bg-white p-6 shadow-soft sm:p-9">
+            <h2 id="inside-heading" className="font-display text-2xl font-semibold text-ink sm:text-3xl">Inside the book</h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {product.inside.map((detail) => (
+                <li key={detail} className="rounded-xl border border-ink/10 px-4 py-3 leading-relaxed text-ink/85">{detail}</li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+        {product.sampleAssets?.length ? (
+          <section aria-labelledby="preview-heading" className="mt-10">
+            <h2 id="preview-heading" className="font-display text-2xl font-semibold text-ink sm:text-3xl">Sample pages</h2>
+            <p className="mt-2 text-sm text-ink-soft">Selected previews, not the complete interior.</p>
+            <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {product.sampleAssets.map((sample) => (
+                <figure key={sample.src} className="rounded-2xl border border-ink/10 bg-white p-3 shadow-soft">
+                  <img src={assetSrc(sample.src)} alt={sample.alt} loading="lazy" className="mx-auto h-72 w-full object-contain" />
+                  <figcaption className="mt-3 text-center text-sm text-ink-soft">{sample.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        ) : null}
+        <p className="mt-8 text-sm text-ink-soft">Amazon purchase links will appear after publication is confirmed.</p>
       </Container>
     </main>
   );
