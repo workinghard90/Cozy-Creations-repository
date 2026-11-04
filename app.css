@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+ * Cozy Creations by Autumn™ design system
+ * Owner brand directive (2026-11-03): primary identity is a deep vintage red
+ * on warm cream, with black/charcoal text and UI accents, and antique gold
+ * for subtle accents. Headings: Fraunces (serif). Body: Nunito (rounded sans).
+ *
+ * Lavender is RESERVED for the Pip's Cloud Magic collection identity —
+ * do not use it in site-wide brand chrome (header, footer, buttons, badges).
+ */
+@theme {
+  /* Warm cream base */
+  --color-cream: #fbf7ef;
+  --color-cream-deep: #f3ead9;
+
+  /* Primary brand — deep vintage red (soft wash, core, deepest) */
+  --color-red-soft: #f5e4e0;
+  --color-red: #8c3333;
+  --color-red-deep: #7f1f1f;
+
+  /* Antique gold accents */
+  --color-gold: #b08d57;
+  --color-gold-soft: #f1e5c8;
+
+  /* Charcoal ink — primary text and UI accents (AA on cream, white cards, red-soft) */
+  --color-ink: #2f2b28;
+  --color-ink-soft: #5d564e;
+  --color-ink-deep: #262120;
+
+  /* Pip's Cloud Magic collection only — soft lavender + watercolor whimsy */
+  --color-lavender: #cbb7e6;
+  --color-lavender-soft: #e9e0f6;
+  --color-lavender-deep: #8e7cc3;
+
+  /* Typography */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Nunito", ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Soft, diffuse shadows (charcoal-tinted) */
+  --shadow-soft: 0 12px 32px -16px rgb(47 43 40 / 0.22);
+  --shadow-lift: 0 20px 44px -20px rgb(47 43 40 / 0.32);
+
+  /* Gentle motion */
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-drift: drift 11s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(14px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-soft);
+    color: var(--color-ink-deep);
+  }
+
+  /*
+   * Focus ring: charcoal — clearly visible on cream, white, red-soft and gold-soft
+   * surfaces (12.9:1 on cream). Elements sitting on deep red surfaces (footer)
+   * override with outline-cream/outline-gold for contrast there.
+   */
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* Kind to anyone who prefers less motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

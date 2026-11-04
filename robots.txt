@@ -1,0 +1,8 @@
+# Cozy Creations by Autumn™ — PRE-LAUNCH
+# The site is not launched yet. Crawlers are asked to stay out until the owner
+# authorises the public launch, at which point this file flips to:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: <public URL>/sitemap.xml
+User-agent: *
+Disallow: /
