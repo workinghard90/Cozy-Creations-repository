@@ -125,20 +125,19 @@ function PrivacyPolicy() {
                 Contact
               </h2>
               <p className="mt-3 leading-relaxed text-ink/85">
-                Questions about privacy? Our contact details are still being set up — a clearly
-                labeled placeholder appears on our{" "}
+                Questions about privacy? You can reach us by email, or visit our{" "}
                 <Link
                   to="/contact"
                   className="font-bold text-ink underline decoration-gold underline-offset-4"
                 >
                   Contact page
                 </Link>{" "}
-                until then.
+                for more details.
               </p>
-              <p className="mt-4 inline-flex items-center gap-3 rounded-2xl border-2 border-dashed border-ink/25 bg-cream px-5 py-3 text-base font-bold text-ink/85">
+              <a href="mailto:cozycreationsbyautumn@gmail.com" className="mt-4 inline-flex min-h-11 items-center gap-3 break-all rounded-2xl border-2 border-ink/20 bg-cream px-5 py-3 text-base font-bold text-ink underline decoration-gold underline-offset-4 focus-visible:outline-gold">
                 <MailDoodle className="h-5 w-5 shrink-0 text-ink-soft" aria-hidden="true" />
-                Contact email coming soon
-              </p>
+                cozycreationsbyautumn@gmail.com
+              </a>
             </section>
           </div>
         </div>
