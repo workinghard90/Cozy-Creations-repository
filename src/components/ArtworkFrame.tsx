@@ -67,6 +67,9 @@ export function ArtworkFrame({
       alt={alt ?? label}
       loading={loading}
       decoding="async"
+      fetchPriority={loading === "eager" ? "high" : undefined}
+      width={600}
+      height={800}
       className={`${RATIO_CLASSES[ratio]} w-full rounded-2xl object-contain bg-white shadow-soft ring-1 ring-ink/10 ${className}`}
     />
   );
