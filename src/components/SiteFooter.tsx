@@ -53,6 +53,7 @@ export function SiteFooter() {
             Good to Know
           </p>
           <ul className="mt-3 space-y-3 text-sm leading-relaxed text-cream/85">
+            <li><a href="mailto:cozycreationsbyautumn@gmail.com" className="break-all font-semibold text-cream underline decoration-gold/70 underline-offset-4 hover:decoration-gold focus-visible:outline-gold">cozycreationsbyautumn@gmail.com</a></li>
             <li>Everything marked “Coming Soon” is still being made — nothing is on sale yet.</li>
             <li>
               Official artwork and Amazon links appear only once they're real and verified.
