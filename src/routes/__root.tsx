@@ -1,5 +1,4 @@
-import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 
 import { BrandedNotFound } from "~/components/BrandedNotFound";
 import { SiteFooter } from "~/components/SiteFooter";
@@ -56,30 +55,11 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <RootDocument>
+    <div className="flex min-h-dvh flex-col bg-cream font-sans text-ink">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-red focus:px-5 focus:py-3 focus:text-base focus:font-bold focus:text-cream">Skip to main content</a>
       <SiteHeader />
       <Outlet />
       <SiteFooter />
-    </RootDocument>
-  );
-}
-
-function RootDocument({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body className="flex min-h-dvh flex-col bg-cream font-sans text-ink">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-red focus:px-5 focus:py-3 focus:text-base focus:font-bold focus:text-cream"
-        >
-          Skip to main content
-        </a>
-        {children}
-        <Scripts />
-      </body>
-    </html>
+    </div>
   );
 }
