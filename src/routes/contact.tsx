@@ -9,7 +9,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     pageMeta(
       "Contact & Updates",
-      "Get in touch with Cozy Creations by Autumn™ and join the newsletter for cozy updates. Contact details and the email sign-up are being connected — check back soon.",
+      "Email Cozy Creations by Autumn™ with questions and feedback. Newsletter updates are coming soon.",
     ),
   component: Contact,
 });
@@ -33,8 +33,7 @@ function Contact() {
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/85">
             Questions, kind words, or ideas to share — we'd love to hear from you. Here's
-            exactly where things stand: our inbox and newsletter are being connected, and both
-            will appear here the moment they work.
+            how to reach us by email. Our newsletter is still coming soon.
           </p>
         </Container>
       </div>
@@ -54,16 +53,13 @@ function Contact() {
               Say Hello
             </h2>
             <p className="mt-3 leading-relaxed text-ink/85">
-              A contact form will arrive here once our email is connected — we'd rather launch
-              it working than promise it twice.
+              Have a question about our books, artwork, or upcoming releases? Send us an email.
             </p>
-            <p className="mt-6 inline-flex items-center gap-3 self-start rounded-2xl border-2 border-dashed border-ink/25 bg-cream px-5 py-3 text-base font-bold text-ink/85">
+            <a href="mailto:cozycreationsbyautumn@gmail.com" className="mt-6 inline-flex min-h-11 items-center gap-3 self-start break-all rounded-2xl border-2 border-red/30 bg-cream px-5 py-3 text-base font-bold text-ink underline decoration-gold underline-offset-4 hover:border-red focus-visible:outline-gold">
               <MailDoodle className="h-5 w-5 shrink-0 text-ink-soft" aria-hidden="true" />
-              Contact email coming soon
-            </p>
-            <p className="mt-4 text-sm font-semibold text-ink-soft">
-              No email address has been set up yet — this placeholder is honest, not a mistake.
-            </p>
+              cozycreationsbyautumn@gmail.com
+            </a>
+            <p className="mt-4 text-sm font-semibold text-ink-soft">Opens your email app. No contact form or account required.</p>
           </section>
 
           {/* Newsletter card */}
@@ -116,9 +112,9 @@ function Contact() {
       {/* Reassurance */}
       <Container className="pb-16 sm:pb-24">
         <SectionHeading
-          eyebrow="In the Meantime"
-          title="While the Mail Is on Its Way"
-          intro="Browse the collections and meet Pip — and rest easy knowing that whenever a sign-up or inbox appears here, it will really work. Nothing fake, nothing half-connected."
+          eyebrow="Stay Connected"
+          title="We’re Here to Help"
+          intro="Browse our collections, meet Pip, and email us with questions. Newsletter sign-ups will appear here when ready."
         />
       </Container>
     </main>
