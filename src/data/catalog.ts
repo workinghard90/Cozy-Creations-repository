@@ -89,6 +89,10 @@ export interface CatalogProduct {
   coverAsset?: string;
   /** Optional verified Amazon listing URL — never a guessed or invented link. */
   amazonUrl?: string;
+  /** Verified contents for the product detail page. */
+  inside?: string[];
+  /** Optional owner-approved preview images (only add after files exist). */
+  sampleAssets?: { src: string; caption: string; alt: string }[];
   /** Flag for homepage/featured emphasis. */
   featured?: boolean;
 }
@@ -169,6 +173,7 @@ export const products: CatalogProduct[] = [
     status: "coming-soon",
     specs: ["Ages 3–8", "8.5 × 11 in paperback", "84 pages", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
     featured: true,
+    inside: ["40 coloring scenes, from simple to more detailed designs", "Blank reverse pages", "8.5 × 11 inch black-and-white interior"],
     coverAsset: "/covers/pips-cloud-magic-coloring-book.png",
     // amazonUrl: set ONLY once a verified Amazon listing URL exists — never before.
   },
@@ -195,6 +200,7 @@ export const products: CatalogProduct[] = [
     // A keepsake record of service, repairs, maintenance costs, and completed
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
+    inside: ["40 two-page quote and completed-work repair records", "Fields for parts, deposits, warranties and service notes", "Two-page service index and 25 lined notes pages", "No fuel log"],
     coverAsset: "/covers/vehicle-maintenance-logbook.png",
     // amazonUrl: reserved until a verified listing exists.
   },
@@ -281,7 +287,7 @@ export const pipArtwork: ArtworkSlot[] = [
     label: "Official book cover coming soon",
     alt: "Official cover of Pip's Cloud Magic Coloring Book",
     icon: "book",
-    // asset: "/pip-art/pip-book-cover.png",
+    asset: "/covers/pips-cloud-magic-coloring-book.png",
   },
   {
     id: "pip-character-sheet",
