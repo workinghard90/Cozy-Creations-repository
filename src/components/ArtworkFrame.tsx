@@ -3,6 +3,12 @@ import type { ArtIcon, ArtRatio, ArtTone } from "./ArtPlaceholder";
 
 /** Frame geometry shared by the real-art and placeholder states, so swapping one
  *  for the other never shifts the layout (the box is reserved by aspect-ratio). */
+const IMAGE_DIMENSIONS: Record<ArtRatio, { width: number; height: number }> = {
+  portrait: { width: 600, height: 800 },
+  landscape: { width: 800, height: 600 },
+  square: { width: 800, height: 800 },
+};
+
 const RATIO_CLASSES: Record<ArtRatio, string> = {
   portrait: "aspect-[3/4]",
   landscape: "aspect-[4/3]",
@@ -68,8 +74,8 @@ export function ArtworkFrame({
       loading={loading}
       decoding="async"
       fetchPriority={loading === "eager" ? "high" : undefined}
-      width={600}
-      height={800}
+      width={IMAGE_DIMENSIONS[ratio].width}
+      height={IMAGE_DIMENSIONS[ratio].height}
       className={`${RATIO_CLASSES[ratio]} w-full rounded-2xl object-contain bg-white shadow-soft ring-1 ring-ink/10 ${className}`}
     />
   );
