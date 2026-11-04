@@ -27,7 +27,7 @@ export const Route = createFileRoute("/books/$collection/$product")({
     const specSummary = product.specs?.length ? ` ${product.specs.join(" · ")}.` : "";
     return pageMeta(
       product.title,
-      `${product.description}${specSummary} From Cozy Creations by Autumn™ — coming soon.`,
+      `${product.description}${specSummary} From Cozy Creations by Autumn™ — ${product.status === "available" ? "available now" : "coming soon"}.`,
     );
   },
   loader: ({ params }) => {
@@ -174,7 +174,7 @@ function ProductDetailPage() {
             </div>
           </section>
         ) : null}
-        <p className="mt-8 text-sm text-ink-soft">Amazon purchase links will appear after publication is confirmed.</p>
+        {!product.amazonUrl ? <p className="mt-8 text-sm text-ink-soft">Amazon purchase links will appear after publication is confirmed.</p> : null}
       </Container>
     </main>
   );
