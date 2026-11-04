@@ -165,9 +165,9 @@ export const products: CatalogProduct[] = [
     collectionId: "coloring-books",
     title: "Pip's Cloud Magic Coloring Book",
     description:
-      "A cozy first coloring adventure. Inside you'll find Pip and his Cloudmeadow friends across 40 friendly illustrations, drawn with bold, simple lines that little hands love.",
+      "Join Pip for cozy kitchens, rainbow days, garden adventures, and magical little moments. This coloring book for ages 3–8 includes 40 scenes ranging from simple coloring pages to detailed discoveries, with blank reverse pages.",
     status: "coming-soon",
-    specs: ["Ages 3–8", "40 coloring illustrations", "Blank reverse pages (kind to markers)"],
+    specs: ["Ages 3–8", "8.5 × 11 in paperback", "84 pages", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
     featured: true,
     // coverAsset: set ONLY once the owner's official cover file arrives.
     // amazonUrl: set ONLY once a verified Amazon listing URL exists — never before.
@@ -189,9 +189,9 @@ export const products: CatalogProduct[] = [
     collectionId: "logbooks-journals",
     title: "Vehicle Maintenance Logbook",
     description:
-      "A keepsake logbook for tracking service, repairs, maintenance costs, and completed work — your vehicle's whole story, organized in one place. Dedicated notes pages and a gentle design make it easy to keep your vehicle's history tidy, page by page.",
+      "A 120-page vehicle maintenance logbook with 40 two-page records for service quotes and completed work, a two-page service index, and 25 lined notes pages. Organize repairs, parts, costs, and vehicle service history in one place.",
     status: "coming-soon",
-    specs: ["Service & repairs", "Maintenance costs", "Dedicated notes pages"],
+    specs: ["6 × 9 in paperback", "120 pages", "40 two-page repair records", "2-page service index", "25 lined notes pages", "Black-and-white interior"],
     // A keepsake record of service, repairs, maintenance costs, and completed
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
