@@ -21,6 +21,8 @@ jobs:
           node-version: '24'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Verify book cover and sample files
+        run: npm run check:assets
       - name: Build storefront
         run: npm run build
       - name: Verify generated site
