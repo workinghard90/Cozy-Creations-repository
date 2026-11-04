@@ -15,6 +15,9 @@ export function pageMeta(title: string, description: string) {
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: BRAND },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: fullTitle },
+      { name: "twitter:description", content: description },
     ],
   };
 }
