@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "start": "bun run serve.ts",
-    "publish": "bash ./publish.sh",
-    "go-live": "bash ./go-live.sh",
-    "format": "bun fmt ."
+    "format": "bun fmt .",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",
@@ -26,6 +26,8 @@
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vite-tsconfig-paths": "^6.0.5"
+    "vite-tsconfig-paths": "^6.0.5",
+    "@cloudflare/vite-plugin": "^1.0.0",
+    "wrangler": "^4.68.0"
   }
 }
