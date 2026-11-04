@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "check:types": "tsc --noEmit",
+    "check:release": "npm run check:assets && npm run check:purchases && npm run check:types && npm run build && node scripts/check-build-output.mjs",
     "format": "bun fmt .",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
