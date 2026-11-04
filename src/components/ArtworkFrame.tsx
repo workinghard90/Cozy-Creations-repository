@@ -67,7 +67,7 @@ export function ArtworkFrame({
       alt={alt ?? label}
       loading={loading}
       decoding="async"
-      className={`${RATIO_CLASSES[ratio]} w-full rounded-2xl object-cover shadow-soft ring-1 ring-ink/10 ${className}`}
+      className={`${RATIO_CLASSES[ratio]} w-full rounded-2xl object-contain bg-white shadow-soft ring-1 ring-ink/10 ${className}`}
     />
   );
 }
