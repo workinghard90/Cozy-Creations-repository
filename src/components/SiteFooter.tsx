@@ -8,6 +8,8 @@ const FOOTER_LINKS = [
   { to: "/", label: "Home" },
   { to: "/pips-cloud-magic", label: "Pip's Cloud Magic" },
   { to: "/books/logbooks-journals", label: "Logbooks & Journals" },
+  { to: "/books/coloring-books/pips-cloud-magic-coloring-book", label: "Preview Pip’s Coloring Book" },
+  { to: "/books/logbooks-journals/vehicle-maintenance-logbook", label: "Preview Vehicle Logbook" },
   { to: "/artwork-and-gifts", label: "Artwork & Gifts" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact & Updates" },
@@ -54,7 +56,7 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 space-y-3 text-sm leading-relaxed text-cream/85">
             <li><a href="mailto:cozycreationsbyautumn@gmail.com" className="break-all font-semibold text-cream underline decoration-gold/70 underline-offset-4 hover:decoration-gold focus-visible:outline-gold">cozycreationsbyautumn@gmail.com</a></li>
-            <li>Everything marked “Coming Soon” is still being made — nothing is on sale yet.</li>
+            <li>Browse official book covers and sample pages before publication. Titles marked “Coming Soon” are not yet for sale.</li>
             <li>
               Official artwork and Amazon links appear only once they're real and verified.
             </li>
