@@ -99,13 +99,19 @@ function Home() {
             <p className="mt-3 leading-relaxed text-ink/85">
               Explore the official cover and preview coloring pages while we prepare for publication.
             </p>
-            <Link
-              to="/pips-cloud-magic"
-              className={button("primary", "md", "mt-6 w-full sm:w-auto")}
-            >
-              Meet Pip &amp; Cloudmeadow
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                to="/books/$collection/$product"
+                params={{ collection: "coloring-books", product: "pips-cloud-magic-coloring-book" }}
+                className={button("primary", "md", "w-full sm:w-auto")}
+              >
+                Preview the Coloring Book
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link to="/pips-cloud-magic" className={button("secondary", "md", "w-full sm:w-auto")}>
+                Meet Pip &amp; Cloudmeadow
+              </Link>
+            </div>
           </div>
           {/* The featured title's official cover once supplied; honest frame until then */}
           <ArtworkFrame
