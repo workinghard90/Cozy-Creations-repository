@@ -48,6 +48,8 @@ function ProductDetailPage() {
   if (!entry) throw notFound();
   const { collection, product } = entry;
   const accent = COLLECTION_ACCENTS[collection.accent];
+  // A verified listing must never activate checkout while a title is still coming soon.
+  const purchaseUrl = product.status === "available" ? product.amazonUrl : undefined;
 
   return (
     <main id="main-content" tabIndex={-1} className="flex-1">
@@ -111,10 +113,10 @@ function ProductDetailPage() {
             ) : null}
 
             <div className="mt-8">
-              {product.amazonUrl ? (
+              {purchaseUrl ? (
                 /* Rendered only once a verified Amazon URL exists in the catalog. */
                 <a
-                  href={product.amazonUrl}
+                  href={purchaseUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={button("primary", "lg")}
@@ -174,7 +176,7 @@ function ProductDetailPage() {
             </div>
           </section>
         ) : null}
-        {!product.amazonUrl ? <p className="mt-8 text-sm text-ink-soft">Amazon purchase links will appear after publication is confirmed.</p> : null}
+        {!purchaseUrl ? <p className="mt-8 text-sm text-ink-soft">Amazon purchase links will appear after publication is confirmed.</p> : null}
       </Container>
     </main>
   );

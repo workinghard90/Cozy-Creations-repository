@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
-    "check:assets": "node scripts/check-catalog-assets.mjs"
+    "check:assets": "node scripts/check-catalog-assets.mjs",
+    "check:purchases": "node scripts/check-purchase-links.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",

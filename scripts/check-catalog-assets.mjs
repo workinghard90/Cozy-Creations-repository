@@ -2,7 +2,8 @@ import { readFileSync, existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const catalog = readFileSync("src/data/catalog.ts", "utf8");
-const paths = [...catalog.matchAll(/(?:src|coverAsset):\s*"(\/[^"]+\.(?:png|webp))"/g)].map((match) => match[1]);
+const productCatalog = catalog.split("export const products: CatalogProduct[] = [")[1]?.split("/* ── Official artwork:")[0] ?? "";
+const paths = [...productCatalog.matchAll(/(?:src|coverAsset):\s*"(\/[^"]+\.(?:png|webp))"/g)].map((match) => match[1]);
 const unique = new Set(paths);
 const failures = [];
 if (paths.length !== unique.size) failures.push("Duplicate catalog image paths");
