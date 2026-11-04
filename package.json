@@ -7,13 +7,14 @@
     "dev": "vite dev",
     "build": "vite build",
     "check:types": "tsc --noEmit",
-    "check:release": "npm run check:assets && npm run check:purchases && npm run check:types && npm run build && node scripts/check-build-output.mjs",
+    "check:release": "npm run check:assets && npm run check:purchases && npm run check:experience && npm run check:types && npm run build && node scripts/check-build-output.mjs",
     "format": "bun fmt .",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "check:assets": "node scripts/check-catalog-assets.mjs",
-    "check:purchases": "node scripts/check-purchase-links.mjs"
+    "check:purchases": "node scripts/check-purchase-links.mjs",
+    "check:experience": "node scripts/check-experience.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",
