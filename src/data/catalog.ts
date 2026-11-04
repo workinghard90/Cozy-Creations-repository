@@ -174,6 +174,12 @@ export const products: CatalogProduct[] = [
     specs: ["Ages 3–8", "8.5 × 11 in paperback", "84 pages", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
     featured: true,
     inside: ["40 coloring scenes, from simple to more detailed designs", "Blank reverse pages", "8.5 × 11 inch black-and-white interior"],
+    sampleAssets: [
+      { src: "/samples/pips-cloud-magic-coloring-book/Pip_02.png", caption: "Coloring page preview 1", alt: "Selected Pip's Cloud Magic coloring page preview" },
+      { src: "/samples/pips-cloud-magic-coloring-book/Pip_12.png", caption: "Coloring page preview 2", alt: "Second selected Pip's Cloud Magic coloring page preview" },
+      { src: "/samples/pips-cloud-magic-coloring-book/Pip_27.png", caption: "Coloring page preview 3", alt: "Third selected Pip's Cloud Magic coloring page preview" },
+      { src: "/samples/pips-cloud-magic-coloring-book/Pip_36.png", caption: "Coloring page preview 4", alt: "Fourth selected Pip's Cloud Magic coloring page preview" },
+    ],
     coverAsset: "/covers/pips-cloud-magic-coloring-book.png",
     // amazonUrl: set ONLY once a verified Amazon listing URL exists — never before.
   },
@@ -202,10 +208,10 @@ export const products: CatalogProduct[] = [
     // consumption tracker — that is not what this book records.
     inside: ["40 two-page quote and completed-work repair records", "Fields for parts, deposits, warranties and service notes", "Two-page service index and 25 lined notes pages", "No fuel log"],
     sampleAssets: [
-      { src: "/quote.webp", caption: "Repair quote record", alt: "Sample repair quote form from Vehicle Maintenance Logbook" },
-      { src: "/completed-work.webp", caption: "Completed work record", alt: "Sample completed-work form from Vehicle Maintenance Logbook" },
-      { src: "/service-index.webp", caption: "Service index", alt: "Sample service index from Vehicle Maintenance Logbook" },
-      { src: "/notes.webp", caption: "Notes page", alt: "Sample lined notes page from Vehicle Maintenance Logbook" },
+      { src: "/samples/vehicle-maintenance-logbook/quote.webp", caption: "Repair quote record", alt: "Sample repair quote form from Vehicle Maintenance Logbook" },
+      { src: "/samples/vehicle-maintenance-logbook/completed-work.webp", caption: "Completed work record", alt: "Sample completed-work form from Vehicle Maintenance Logbook" },
+      { src: "/samples/vehicle-maintenance-logbook/service-index.webp", caption: "Service index", alt: "Sample service index from Vehicle Maintenance Logbook" },
+      { src: "/samples/vehicle-maintenance-logbook/notes.webp", caption: "Notes page", alt: "Sample lined notes page from Vehicle Maintenance Logbook" },
     ],
     coverAsset: "/covers/vehicle-maintenance-logbook.png",
     // amazonUrl: reserved until a verified listing exists.
