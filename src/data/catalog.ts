@@ -201,6 +201,12 @@ export const products: CatalogProduct[] = [
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
     inside: ["40 two-page quote and completed-work repair records", "Fields for parts, deposits, warranties and service notes", "Two-page service index and 25 lined notes pages", "No fuel log"],
+    sampleAssets: [
+      { src: "/quote.webp", caption: "Repair quote record", alt: "Sample repair quote form from Vehicle Maintenance Logbook" },
+      { src: "/completed-work.webp", caption: "Completed work record", alt: "Sample completed-work form from Vehicle Maintenance Logbook" },
+      { src: "/service-index.webp", caption: "Service index", alt: "Sample service index from Vehicle Maintenance Logbook" },
+      { src: "/notes.webp", caption: "Notes page", alt: "Sample lined notes page from Vehicle Maintenance Logbook" },
+    ],
     coverAsset: "/covers/vehicle-maintenance-logbook.png",
     // amazonUrl: reserved until a verified listing exists.
   },
