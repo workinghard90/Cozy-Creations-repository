@@ -9,7 +9,8 @@
     "format": "bun fmt .",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "check:assets": "node scripts/check-catalog-assets.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",
