@@ -169,7 +169,7 @@ function ProductDetailPage() {
             <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {product.sampleAssets.map((sample) => (
                 <figure key={sample.src} className="rounded-2xl border border-ink/10 bg-white p-3 shadow-soft">
-                  <img src={assetSrc(sample.src)} alt={sample.alt} width={850} height={1100} loading="lazy" decoding="async" className="mx-auto h-72 w-full object-contain" />
+                  <img src={assetSrc(sample.src)} alt={sample.alt} {...(sample.src.startsWith("/samples/pips-cloud-magic-coloring-book/") ? { width: 2550, height: 3300 } : {})} loading="lazy" decoding="async" className="mx-auto h-72 w-full object-contain" />
                   <figcaption className="mt-3 text-center text-sm text-ink-soft">{sample.caption}</figcaption>
                 </figure>
               ))}
