@@ -39,9 +39,12 @@ const result = spawnSync(npm, [
 if (result.error || result.status !== 0) {
   throw new Error(`Cannot install matching Rollup native package: ${result.error?.message ?? result.status}`);
 }
-try {
-  require.resolve(name);
-} catch {
+// Resolve again in a fresh Node process: the original module loader may
+// cache a negative lookup made before npm installed the native package.
+const verify = spawnSync(process.execPath, ["-e", `require.resolve("${name}")`], {
+  stdio: "inherit", shell: false,
+});
+if (verify.error || verify.status !== 0) {
   throw new Error(`Rollup native package ${name}@${pkg.version} is still missing after install`);
 }
 console.log("[rollup-native] Native dependency verified");
