@@ -9,6 +9,9 @@ const checks = [
   ["src/components/ArtworkFrame.tsx", /loading=\{loading\}/, "Artwork loading strategy"],
   ["src/styles/app.css", /prefers-reduced-motion:\s*reduce/, "Reduced-motion support"],
   ["src/routes/__root.tsx", /display=swap/, "Non-blocking web font display"],
+  ["index.html", /<meta name="robots" content="noindex, nofollow"/, "Prelaunch static noindex"],
+  ["index.html", /property="og:site_name"/, "Static social sharing fallback"],
+  ["src/routes/books/$collection/$product.tsx", /width: 2550, height: 3300/, "Verified Pip preview image dimensions"],
 ];
 let failed = false;
 for (const [path, pattern, label] of checks) {

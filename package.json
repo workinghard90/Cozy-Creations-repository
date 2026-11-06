@@ -14,7 +14,8 @@
     "cf-typegen": "wrangler types",
     "check:assets": "node scripts/check-catalog-assets.mjs",
     "check:purchases": "node scripts/check-purchase-links.mjs",
-    "check:experience": "node scripts/check-experience.mjs"
+    "check:experience": "node scripts/check-experience.mjs",
+    "prebuild": "node scripts/ensure-rollup-native.mjs"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",

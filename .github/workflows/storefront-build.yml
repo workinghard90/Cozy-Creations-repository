@@ -27,6 +27,12 @@ jobs:
           node-version: '24'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Simulate Cloudflare missing native Rollup package and verify repair
+        run: |
+          test -d node_modules/rollup
+          rm -rf node_modules/@rollup/rollup-linux-x64-gnu
+          npm run build
+          node -e "require.resolve('@rollup/rollup-linux-x64-gnu')"
       - name: Verify release readiness
         run: npm run check:release
       - name: Validate Cloudflare Worker packaging without deployment
