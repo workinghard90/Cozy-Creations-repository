@@ -27,7 +27,7 @@ try {
 }
 
 const pkg = JSON.parse(readFileSync(resolve("node_modules/rollup/package.json"), "utf8"));
-if (!/^\\d+\\.\\d+\\.\\d+/.test(pkg.version)) {
+if (!/^[0-9]+[.][0-9]+[.][0-9]+/.test(pkg.version)) {
   throw new Error("Unexpected installed Rollup version; refusing to guess native package version");
 }
 console.log(`[rollup-native] Missing ${name}; installing exact version ${pkg.version} before Vite build`);
