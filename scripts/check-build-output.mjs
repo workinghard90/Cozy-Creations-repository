@@ -27,6 +27,19 @@ else if (!readFileSync(join(root, "robots.txt"), "utf8").includes("Disallow: /")
 for (const file of ["covers/pips-cloud-magic-coloring-book.png", "covers/vehicle-maintenance-logbook.png"]) {
   if (!existsSync(join(root, file))) failures.push("Missing deployed cover: " + file);
 }
+const manifestPath = join(root, "companion-manifest.json");
+try {
+  const m = JSON.parse(readFileSync(manifestPath, "utf8"));
+  if (m.schemaVersion !== 1 || !m.products?.length || !m.routes?.includes("/contact")) throw new Error("invalid public companion contract");
+  if (Object.keys(m).sort().join() !== "assets,products,routes,schemaVersion") throw new Error("unexpected manifest fields");
+  for (const asset of m.assets) {
+    if (!asset.startsWith("/") || asset.includes("..") || !existsSync(join(root, asset.slice(1)))) throw new Error("missing/unsafe manifest asset: " + asset);
+  }
+  for (const p of m.products) {
+    if (p.status !== "available" && p.amazonUrl !== null) throw new Error("unreleased purchase link exposed");
+    if (!m.routes.includes(p.path)) throw new Error("product path missing from contract");
+  }
+} catch (e) { failures.push("Companion manifest: " + e.message); }
 if (failures.length) {
   for (const failure of failures) console.error("FAIL:", failure);
   process.exitCode = 1;

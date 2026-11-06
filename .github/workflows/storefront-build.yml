@@ -29,3 +29,5 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Verify release readiness
         run: npm run check:release
+      - name: Validate Cloudflare Worker packaging without deployment
+        run: npx wrangler deploy --dry-run --outdir /tmp/cozy-wrangler-dry-run
