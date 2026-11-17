@@ -7,6 +7,7 @@ import { SparkleDoodle } from "./doodles";
 import { StatusBadge } from "./StatusBadge";
 import { COLLECTION_ACCENTS } from "./collectionStyles";
 import {
+  bookSeries,
   collectionBadgeTone,
   collectionCountLabel,
   getCollection,
@@ -25,6 +26,19 @@ export function CollectionPageBody({ collectionId }: { collectionId: CollectionI
   if (!collection) throw notFound();
   const items = productsInCollection(collection.id);
   const accent = COLLECTION_ACCENTS[collection.accent];
+  const seriesGroups = bookSeries
+    .filter((series) => series.collectionId === collection.id)
+    .map((series) => ({ ...series, items: items.filter((product) => product.seriesId === series.id) }));
+  const ungrouped = items.filter((product) => !seriesGroups.some((series) => series.id === product.seriesId));
+  const groups: { id?: string; title: string; description: string; items: typeof items }[] = [...seriesGroups];
+  if (ungrouped.length > 0) {
+    groups.push({
+      id: undefined,
+      title: seriesGroups.length > 0 ? "More titles" : `Titles in ${collection.title}`,
+      description: "",
+      items: ungrouped,
+    });
+  }
 
   return (
     <main id="main-content" tabIndex={-1} className="flex-1">
@@ -60,22 +74,28 @@ export function CollectionPageBody({ collectionId }: { collectionId: CollectionI
       {/* Catalog-driven product cards */}
       {items.length > 0 ? (
         <Container className="pb-12 sm:pb-16">
-          {/* Heading for the product list: the cards use h3, so this h2 keeps the
-              heading order 1 → 2 → 3 instead of jumping from the h1 to an h3. */}
-          <h2 className="sr-only">Titles in {collection.title}</h2>
-          {/* Column count follows the catalog: a lone title is centred rather than
-              stranded in a third of the row, two titles sit as a pair. */}
-          <div
-            className={`grid gap-5 sm:gap-6 ${
-              items.length === 1
-                ? "mx-auto max-w-[22rem]"
-                : items.length === 2
-                  ? "sm:grid-cols-2 lg:mx-auto lg:max-w-4xl"
-                  : "sm:grid-cols-2 lg:grid-cols-3"
-            }`}
-          >
-            {items.map((product) => (
-              <CatalogProductCard key={product.id} collection={collection} product={product} />
+          <div className="space-y-10">
+            {groups.map((group) => (
+              <section
+                key={group.id ?? "other-titles"}
+                aria-labelledby={`${group.id ?? collection.id}-heading`}
+                className={group.id ? "rounded-3xl border border-lavender/40 bg-white/60 p-5 shadow-soft sm:p-8" : undefined}
+              >
+                <h2
+                  id={`${group.id ?? collection.id}-heading`}
+                  className={group.id ? "text-balance font-display text-3xl font-semibold text-ink sm:text-4xl" : "sr-only"}
+                >
+                  {group.title}
+                </h2>
+                {group.description && (
+                  <p className="mt-3 max-w-2xl text-pretty leading-relaxed text-ink/85">{group.description}</p>
+                )}
+                <div className={`grid gap-5 sm:gap-6 ${group.id ? "mt-7 " : ""}${group.items.length === 1 ? (group.id ? "max-w-[24rem]" : "mx-auto max-w-[22rem]") : group.items.length === 2 ? "sm:grid-cols-2 lg:mx-auto lg:max-w-4xl" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+                  {group.items.map((product) => (
+                    <CatalogProductCard key={product.id} collection={collection} product={product} />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </Container>
