@@ -7,7 +7,7 @@ export const Route = createFileRoute("/books/logbooks-journals")({
   head: () =>
     pageMeta(
       "Logbooks & Journals",
-      "Practical logbooks and journals from Cozy Creations by Autumn™, starting with the Vehicle Maintenance Logbook — a keepsake for tracking service, repairs, maintenance costs, and completed work, with dedicated notes pages. Coming soon.",
+      "Practical logbooks and journals from Cozy Creations by Autumn™, starting with the Vehicle Maintenance Logbook — a keepsake for tracking service, repairs, maintenance costs, and completed work, with dedicated notes pages. Available on Amazon.",
     ),
   component: LogbooksJournalsPage,
 });
