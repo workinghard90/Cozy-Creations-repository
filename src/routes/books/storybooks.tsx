@@ -7,7 +7,7 @@ export const Route = createFileRoute("/books/storybooks")({
   head: () =>
     pageMeta(
       "Storybooks",
-      "Illustrated read-aloud storybooks from Cozy Creations by Autumn™ — starting with Pip and the Upside-Down Rain, the companion Pip's Cloud Magic storybook. Coming soon.",
+      "Explore Cloudmeadow Chronicles™ from Cozy Creations by Autumn™. Its first storybook, The Missing Rainbow, is awaiting its physical proof.",
     ),
   component: StorybooksPage,
 });

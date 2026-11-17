@@ -104,7 +104,7 @@ export const collections: CatalogCollection[] = [
     slug: "coloring-books",
     title: "Coloring Books",
     blurb:
-      "Cozy coloring adventures with bold, friendly lines made for little artists — gentle fun for growing imaginations.",
+      "Color your way through Pip’s world in Cloudmeadow Coloring Adventures™.",
     icon: "cloud",
     // Lavender: Pip's Cloud Magic collection-linked (Pip's Cloud Magic Coloring Book).
     accent: "lavender",
@@ -114,9 +114,9 @@ export const collections: CatalogCollection[] = [
     slug: "storybooks",
     title: "Storybooks",
     blurb:
-      "Illustrated read-aloud stories of friendship, kindness, and gentle magic — cozy tales for bedtime and together time.",
+      "Meet Pip and his friends in Cloudmeadow Chronicles™, a series of illustrated read-aloud stories.",
     icon: "book",
-    // Lavender: Pip's Cloud Magic collection-linked (Pip and the Upside-Down Rain).
+    // Lavender: Pip's Cloud Magic collection-linked (The Missing Rainbow).
     accent: "lavender",
   },
   {
@@ -169,9 +169,9 @@ export const products: CatalogProduct[] = [
     collectionId: "coloring-books",
     title: "Pip's Cloud Magic Coloring Book",
     description:
-      "Join Pip for cozy kitchens, rainbow days, garden adventures, and magical little moments. This coloring book for ages 3–8 includes 40 scenes ranging from simple coloring pages to detailed discoveries, with blank reverse pages.",
+      "The first book in Cloudmeadow Coloring Adventures™ has been proofed, corrected, and is ready for print. The series update is awaiting approval, and publication is pending. Planned paperback price: $9.99.",
     status: "coming-soon",
-    specs: ["Ages 3–8", "8.5 × 11 in paperback", "84 pages", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
+    specs: ["8.5 × 11 in paperback", "40 coloring scenes", "Blank reverse pages", "Black-and-white interior"],
     featured: true,
     inside: ["40 coloring scenes, from simple to more detailed designs", "Blank reverse pages", "8.5 × 11 inch black-and-white interior"],
     sampleAssets: [
@@ -187,9 +187,9 @@ export const products: CatalogProduct[] = [
     id: "pip-and-the-upside-down-rain",
     slug: "pip-and-the-upside-down-rain",
     collectionId: "storybooks",
-    title: "Pip and the Upside-Down Rain",
+    title: "The Missing Rainbow",
     description:
-      "The companion Pip's Cloud Magic storybook from Cloudmeadow. Story details and cover coming soon.",
+      "Pip and his friends set out to discover why their rainbow has lost its glow. Cloudmeadow Chronicles™ is in series review, and The Missing Rainbow is awaiting its physical proof. Planned price: $12.99.",
     status: "coming-soon",
     // specs: none confirmed yet — add only what the owner confirms.
     // coverAsset / amazonUrl: reserved until real, verified assets exist.
