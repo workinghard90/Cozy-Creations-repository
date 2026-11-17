@@ -201,8 +201,8 @@ export const products: CatalogProduct[] = [
     title: "Vehicle Maintenance Logbook",
     description:
       "A 120-page vehicle maintenance logbook with 40 two-page records for service quotes and completed work, a two-page service index, and 25 lined notes pages. Organize repairs, parts, costs, and vehicle service history in one place.",
-    status: "coming-soon",
-    specs: ["6 × 9 in paperback", "120 pages", "40 two-page repair records", "2-page service index", "25 lined notes pages", "Black-and-white interior"],
+    status: "available",
+    specs: ["$9.99 USD", "6 × 9 in paperback", "120 pages", "40 two-page repair records", "2-page service index", "25 lined notes pages", "Black-and-white interior"],
     // A keepsake record of service, repairs, maintenance costs, and completed
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
@@ -214,7 +214,7 @@ export const products: CatalogProduct[] = [
       { src: "/samples/vehicle-maintenance-logbook/notes.webp", caption: "Notes page", alt: "Sample lined notes page from Vehicle Maintenance Logbook" },
     ],
     coverAsset: "/covers/vehicle-maintenance-logbook.png",
-    // amazonUrl: reserved until a verified listing exists.
+    amazonUrl: "https://www.amazon.com/dp/B0HQZHSDP3",
   },
   // ── Future titles get added above this line ──────────────────────────────
 ];
