@@ -63,7 +63,25 @@ export interface CatalogCollection {
   accent: CollectionAccent;
 }
 
+export type SeriesId = "cloudmeadow-chronicles" | "cloudmeadow-coloring-adventures";
+
+export const bookSeries: { id: SeriesId; collectionId: CollectionId; title: string; description: string }[] = [
+  {
+    id: "cloudmeadow-chronicles",
+    collectionId: "storybooks",
+    title: "Cloudmeadow Chronicles™",
+    description: "Illustrated stories from Cloudmeadow, where Pip and his friends discover kindness, friendship, and the magic within everyone.",
+  },
+  {
+    id: "cloudmeadow-coloring-adventures",
+    collectionId: "coloring-books",
+    title: "Cloudmeadow Coloring Adventures™",
+    description: "Explore Pip’s world through coloring books filled with Cloudmeadow characters and adventures.",
+  },
+];
+
 export interface CatalogProduct {
+  seriesId?: SeriesId;
   id: string;
   slug: string;
   collectionId: CollectionId;
@@ -165,6 +183,7 @@ export const bookCollections: CatalogCollection[] = collections.filter(
 export const products: CatalogProduct[] = [
   {
     id: "pips-cloud-magic-coloring-book",
+    seriesId: "cloudmeadow-coloring-adventures",
     slug: "pips-cloud-magic-coloring-book",
     collectionId: "coloring-books",
     title: "Pip's Cloud Magic Coloring Book",
@@ -185,6 +204,7 @@ export const products: CatalogProduct[] = [
   },
   {
     id: "pip-and-the-upside-down-rain",
+    seriesId: "cloudmeadow-chronicles",
     slug: "pip-and-the-upside-down-rain",
     collectionId: "storybooks",
     title: "The Missing Rainbow",
