@@ -98,7 +98,7 @@ function Home() {
               of friendship, kindness, and gentle magic.
             </p>
             <p className="mt-3 leading-relaxed text-ink/85">
-              Explore the official cover and preview coloring pages while we prepare for publication.
+              Read along with Cloudmeadow Chronicles™ or pick up your favorite crayons for Cloudmeadow Coloring Adventures™.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link

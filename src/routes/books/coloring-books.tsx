@@ -7,7 +7,7 @@ export const Route = createFileRoute("/books/coloring-books")({
   head: () =>
     pageMeta(
       "Coloring Books",
-      "Cozy coloring books from Cozy Creations by Autumn™ — starting with Pip's Cloud Magic Coloring Book, 40 gentle illustrations for ages 3–8. Coming soon.",
+      "Explore Cloudmeadow Coloring Adventures™. Pip’s first coloring book is proofed and print-ready, with publication pending.",
     ),
   component: ColoringBooksPage,
 });

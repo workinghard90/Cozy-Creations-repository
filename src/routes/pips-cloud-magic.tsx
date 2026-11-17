@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pips-cloud-magic")({
   head: () =>
     pageMeta(
       "Pip's Cloud Magic",
-      "Meet Pip, a small fluffy lavender cloud-sprite, and Cloudmeadow, his whimsical home. Pip's Cloud Magic Coloring Book (ages 3–8) and the companion storybook Pip and the Upside-Down Rain are coming soon.",
+      "Explore Cloudmeadow Chronicles™ and Cloudmeadow Coloring Adventures™. Follow The Missing Rainbow and Pip’s first coloring book as they approach publication.",
     ),
   component: PipsCloudMagic,
 });
@@ -117,7 +117,7 @@ function PipsCloudMagic() {
         <SectionHeading
           eyebrow="In This Collection"
           title="Books from Cloudmeadow"
-          intro="Two cozy titles are on their way from Pip's world — each with its own page, its true status, and a reserved Amazon spot for launch day."
+          intro="Discover the first titles in Cloudmeadow’s storybook and coloring series."
         />
         {/* Two titles today — a matched pair, centred on wide screens. */}
         <div className="mt-9 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mx-auto lg:max-w-4xl">
