@@ -107,6 +107,8 @@ export interface CatalogProduct {
   coverAsset?: string;
   /** Optional verified Amazon listing URL — never a guessed or invented link. Purchase CTA also requires status === 'available'. */
   amazonUrl?: string;
+  amazonLabel?: string;
+  hardcover?: { asin: string; label: string };
   /** Verified contents for the product detail page. */
   inside?: string[];
   /** Optional owner-approved preview images (only add after files exist). */
@@ -222,7 +224,7 @@ export const products: CatalogProduct[] = [
     description:
       "A 120-page vehicle maintenance logbook with 40 two-page records for service quotes and completed work, a two-page service index, and 25 lined notes pages. Organize repairs, parts, costs, and vehicle service history in one place.",
     status: "available",
-    specs: ["$9.99 USD", "6 × 9 in paperback", "120 pages", "40 two-page repair records", "2-page service index", "25 lined notes pages", "Black-and-white interior"],
+    specs: ["6 × 9 in", "120 pages", "40 two-page repair records", "2-page service index", "25 lined notes pages", "Black-and-white interior"],
     // A keepsake record of service, repairs, maintenance costs, and completed
     // work with dedicated notes pages. Never describe it as a distance or
     // consumption tracker — that is not what this book records.
@@ -235,6 +237,8 @@ export const products: CatalogProduct[] = [
     ],
     coverAsset: "/covers/vehicle-maintenance-logbook.png",
     amazonUrl: "https://www.amazon.com/dp/B0HQZHSDP3",
+    amazonLabel: "Paperback · $9.99",
+    hardcover: { asin: "B0HS1VXQJZ", label: "Hardcover · $15.99" },
   },
   // ── Future titles get added above this line ──────────────────────────────
 ];
