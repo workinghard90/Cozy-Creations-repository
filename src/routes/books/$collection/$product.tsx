@@ -114,7 +114,7 @@ function ProductDetailPage() {
 
             <div className="mt-8">
               {purchaseUrl ? (
-                /* Rendered only once a verified Amazon URL exists in the catalog. */
+                <div className="flex flex-wrap gap-3">
                 <a
                   href={purchaseUrl}
                   target="_blank"
@@ -122,8 +122,15 @@ function ProductDetailPage() {
                   className={button("primary", "lg")}
                 >
                   <CartDoodle className="h-5 w-5" aria-hidden="true" />
-                  Buy on Amazon
+                  {product.amazonLabel ?? "Buy on Amazon"}
                 </a>
+                {product.hardcover && (
+                  <a href={`https://www.amazon.com/dp/${product.hardcover.asin}`} target="_blank" rel="noopener noreferrer" className={button("primary", "lg")}>
+                    <CartDoodle className="h-5 w-5" aria-hidden="true" />
+                    {product.hardcover.label}
+                  </a>
+                )}
+                </div>
               ) : (
                 <ReservedAmazonButton note="Amazon link coming soon" />
               )}
