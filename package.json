@@ -15,7 +15,8 @@
     "check:assets": "node scripts/check-catalog-assets.mjs",
     "check:purchases": "node scripts/check-purchase-links.mjs",
     "check:experience": "node scripts/check-experience.mjs",
-    "prebuild": "node scripts/ensure-rollup-native.mjs"
+    "prebuild": "node scripts/ensure-rollup-native.mjs",
+    "audit:storefront": "npm run build && npm exec --yes --package=@lhci/cli@0.16.1 -- lhci autorun"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.158.1",

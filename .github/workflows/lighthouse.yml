@@ -1,0 +1,32 @@
+name: Storefront Lighthouse audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/lighthouse.yml'
+      - 'lighthouserc.cjs'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --no-audit --no-fund
+      - run: npm run audit:storefront
+      - name: Summarize scores
+        run: |
+          node --input-type=module <<'JS' >> "$GITHUB_STEP_SUMMARY"
+          import fs from 'node:fs';
+          const dir = '.lighthouseci/reports/';
+          for (const report of JSON.parse(fs.readFileSync(dir + 'manifest.json'))) {
+            console.log('### ' + new URL(report.url).pathname);
+            for (const [category, score] of Object.entries(report.summary)) {
+              console.log('- ' + category + ' — ' + Math.round(score * 100));
+            }
+          }
+          JS

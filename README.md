@@ -50,3 +50,13 @@ The current site uses Vite + React Router client rendering. Route-specific metad
 - `RELEASE-CHECKLIST.md` — release and verification steps.
 
 © 2026 Melody Autumn Hall. All rights reserved.
+
+## Storefront audits
+
+[![Lighthouse CI license](https://img.shields.io/badge/Lighthouse_CI-Apache--2.0-blue)](https://github.com/GoogleChrome/lighthouse-ci/blob/v0.16.1/LICENSE)
+
+Run `npm run audit:storefront` with Chrome installed to audit the built home page, both children's book shelves, and the vehicle logbook page. Set `CHROME_PATH` if Chrome is installed in a custom location. Reports are written locally to `.lighthouseci/reports/`.
+
+This audit uses [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci/tree/v0.16.1), from GoogleChrome and its contributors. The CLI is installed from the upstream npm package with its license and notices. The badge identifies the audit tool's license only. Cozy's books, artwork, and storefront retain their existing rights.
+
+From GitHub, open **Actions → Storefront Lighthouse audit → Run workflow** to see scores in the run summary. The workflow reuses GitHub’s [checkout](https://github.com/actions/checkout/blob/v4/LICENSE) and [setup-node](https://github.com/actions/setup-node/blob/v4/LICENSE) actions, both [![MIT license](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/license/mit). All three tools run during development or CI.
