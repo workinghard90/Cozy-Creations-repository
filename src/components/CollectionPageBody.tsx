@@ -129,6 +129,17 @@ export function CollectionPageBody({ collectionId }: { collectionId: CollectionI
         </Container>
       )}
 
+      {(collection.id === "storybooks" || collection.id === "coloring-books") && (
+        <Container className="pb-12 text-center">
+          <a
+            className="inline-flex min-h-11 items-center justify-center font-bold text-ink underline underline-offset-4"
+            href="https://www.instagram.com/wonderfullyenchantedchaos/"
+          >
+            Follow Wonderfully Enchanted Chaos on Instagram
+          </a>
+        </Container>
+      )}
+
       {/* Honest-status note */}
       <Container className="pb-16 sm:pb-24">
         <p
