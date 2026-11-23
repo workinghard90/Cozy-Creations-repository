@@ -131,12 +131,13 @@ export function CollectionPageBody({ collectionId }: { collectionId: CollectionI
 
       {(collection.id === "storybooks" || collection.id === "coloring-books") && (
         <Container className="pb-12 text-center">
-          <a
-            className="inline-flex min-h-11 items-center justify-center font-bold text-ink underline underline-offset-4"
-            href="https://www.instagram.com/wonderfullyenchantedchaos/"
-          >
-            Follow Wonderfully Enchanted Chaos on Instagram
-          </a>
+          <nav aria-labelledby="wec-social-heading" className="text-ink">
+            <h2 id="wec-social-heading" className="font-display text-2xl font-semibold">Follow Wonderfully Enchanted Chaos</h2>
+            <div className="mt-2 flex flex-wrap justify-center gap-x-6">
+              <a className="inline-flex min-h-11 items-center font-bold underline underline-offset-4" href="https://www.instagram.com/wonderfullyenchantedchaos/">Instagram</a>
+              <a className="inline-flex min-h-11 items-center font-bold underline underline-offset-4" href="https://www.tiktok.com/@wonderfullyenchanedchaos">TikTok</a>
+            </div>
+          </nav>
         </Container>
       )}
 
