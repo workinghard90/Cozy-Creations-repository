@@ -117,6 +117,18 @@ export function CollectionPageBody({ collectionId }: { collectionId: CollectionI
         </Container>
       )}
 
+      {collection.id === "logbooks-journals" && (
+        <Container className="pb-12 text-center">
+          <nav aria-label="Follow Cozy Creations by Autumn" className="text-ink">
+            <h2 className="font-display text-2xl font-semibold">Follow Cozy Creations by Autumn</h2>
+            <div className="mt-2 flex flex-wrap justify-center gap-x-6">
+              <a className="inline-flex min-h-11 items-center font-bold underline underline-offset-4" href="https://www.tiktok.com/@cozycreationsbyautumn">TikTok</a>
+              <a className="inline-flex min-h-11 items-center font-bold underline underline-offset-4" href="https://www.instagram.com/cozy_creationsbyautumn/">Instagram</a>
+            </div>
+          </nav>
+        </Container>
+      )}
+
       {/* Honest-status note */}
       <Container className="pb-16 sm:pb-24">
         <p
