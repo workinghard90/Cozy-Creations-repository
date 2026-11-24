@@ -174,7 +174,7 @@ export const bookCollections: CatalogCollection[] = collections.filter(
 );
 
 /**
- * All products, v1. EXACTLY three titles exist today — nothing is invented.
+ * Confirmed products across all collections.
  *
  * ─────────────────────────────────────────────────────────────────────────
  * ▶ FUTURE PRODUCTS: append new CatalogProduct objects to this array.
@@ -239,6 +239,28 @@ export const products: CatalogProduct[] = [
     amazonUrl: "https://www.amazon.com/dp/B0HQZHSDP3",
     amazonLabel: "Paperback · $9.99",
     hardcover: { asin: "B0HS1VXQJZ", label: "Hardcover · $15.99" },
+  },
+  {
+    id: "business-mileage-logbook-standard",
+    slug: "business-mileage-logbook-standard",
+    collectionId: "logbooks-journals",
+    title: "Business Mileage Logbook",
+    description: "Record business trips in a standard layout with larger text and more space to write each entry.",
+    status: "available",
+    specs: ["6 × 9 in", "120 pages", "Standard trip layout"],
+    amazonUrl: "https://www.amazon.com/dp/B0HSN4GN3R",
+    amazonLabel: "Shop the standard layout on Amazon",
+  },
+  {
+    id: "business-mileage-logbook-compact",
+    slug: "business-mileage-logbook-compact",
+    collectionId: "logbooks-journals",
+    title: "Business Mileage Logbook",
+    description: "Fit more business trips on each page with smaller text and a compact entry layout.",
+    status: "available",
+    specs: ["6 × 9 in", "120 pages", "More trips per page"],
+    amazonUrl: "https://www.amazon.com/dp/B0HSN5QVLS",
+    amazonLabel: "Shop the compact layout on Amazon",
   },
   // ── Future titles get added above this line ──────────────────────────────
 ];

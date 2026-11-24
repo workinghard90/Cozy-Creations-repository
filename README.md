@@ -1,6 +1,6 @@
 # Cozy Creations by Autumn™ — storefront
 
-This is the **public, pre-launch storefront** for Cozy Creations by Autumn™, the publishing and creative brand of Melody Autumn Hall. The site includes the three currently cataloged book titles, collection pages, official cover art, selected sample pages, and a contact page. Products remain **coming soon** until verified Amazon publication links are entered in `src/data/catalog.ts`.
+This is the **public, pre-launch storefront** for Cozy Creations by Autumn™, the publishing and creative brand of Melody Autumn Hall. The site includes the current book catalog, collection pages, official cover art, selected sample pages, and a contact page. Products remain **coming soon** until verified Amazon publication links are entered in `src/data/catalog.ts`.
 
 The **private Cozy Site Companion** runs in a separate private repository. Only the explicitly public `/companion-manifest.json` contract is emitted by this storefront's build. Never add Companion credentials, monitoring history, or private state to this public repository.
 
